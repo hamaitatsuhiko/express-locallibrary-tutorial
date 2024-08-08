@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  ul
+    each favoriteBook in favorite_book_list
+      li
+        a(href=favoriteBook.book.url) #{favoriteBook.book.title}
+        |  by 
+        a(href=favoriteBook.user.url) #{favoriteBook.user.name}

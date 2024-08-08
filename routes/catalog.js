@@ -1,11 +1,19 @@
 const express = require("express");
 const router = express.Router();
 
+
 // Require our controllers.
 const book_controller = require("../controllers/bookController");
 const author_controller = require("../controllers/authorController");
 const genre_controller = require("../controllers/genreController");
 const book_instance_controller = require("../controllers/bookinstanceController");
+const favorite_book_controller = require("../controllers/favoriteBookController");
+
+// POST request for creating Favorite Book.
+router.post("/favorite-book/create", favorite_book_controller.favorite_book_create_post);
+
+// GET request for list of all Favorite Books.
+router.get("/favorite-books", favorite_book_controller.favorite_book_list);
 
 /// BOOK ROUTES ///
 
